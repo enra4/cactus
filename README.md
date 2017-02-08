@@ -1,8 +1,8 @@
-#### library is still a work in progress
-
 # cactus
 
 helper library for the TeamSpeak 3 [ServerQuery](http://media.teamspeak.com/ts3_literature/TeamSpeak%203%20Server%20Query%20Manual.pdf)
+
+[![travis](https://travis-ci.org/Nikersify/cactus.svg?branch=master)](https://travis-ci.org/Nikersify/cactus)
 
 # example
 
@@ -15,7 +15,7 @@ bot.on('ready', () => {
 	bot.send('sendtextmessage', {
 		target: 2,
 		targetmode: 1,
-		msg: "hello world"
+		msg: 'hello world'
 	}, (res) => {
 		console.log(res)
 		// { err: { id: '0', msg: 'ok' },
@@ -90,9 +90,9 @@ Queries a raw string of the command to the server, has to be escaped (page 5 in 
 Registers callbacks to special events emitted by the server, provided that you ask it nicely. `type` depends on the *type* of events you want to register, so `type` is:
 
 - messages
-	- `private-messages` - listen to all private messages sent to the bot, this also includes your own messages that you send to others, so be sure to put a check in place for that.
-	- `channel-messages` - **requires `id`** - get messages in the channel referred to by the `id`
-	- `server-messages` - all messages in the global server channel
+	- `private-message` - listen to all private messages sent to the bot, this also includes your own messages that you send to others, so be sure to put a check in place for that.
+	- `channel-message` - **requires `id`** - get messages in the channel referred to by the `id`
+	- `server-message` - all messages in the global server channel
 - `client-moved` - **requires `id`** - fires whenether a user switches to, or gets moved into a channel.
 - `client-joined` - listen to clients joining the server, or more specifically your bot's **view,** if you have weird permissions for the SQ on your server.
 - `client-left` - same as above, but with leaving.
